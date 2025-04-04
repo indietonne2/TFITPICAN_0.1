@@ -1,0 +1,29 @@
+# Core requirements for TFITPICAN
+# -----------------------------------------------------------------------------
+
+# CAN interface
+python-can>=4.0.0
+cantools>=36.0.0
+
+# GUI
+PyQt5>=5.15.0
+pyqtgraph>=0.12.0
+
+# Database
+influxdb>=5.3.0
+
+# Visualization
+requests>=2.25.0  # For Grafana API
+
+# Bluetooth
+# Note: PyBluez requires system dependencies (libbluetooth-dev on Linux)
+PyBluez>=0.23; platform_system != "Windows"
+bleak>=0.14.0  # Cross-platform BLE library
+
+# Utilities
+numpy>=1.20.0
+pyyaml>=6.0
+
+# Raspberry Pi specific (commented by default)
+# RPi.GPIO>=0.7.0; platform_system == "Linux"
+# gpiozero>=1.6.2; platform_system == "Linux"
