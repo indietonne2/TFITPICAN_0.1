@@ -1,0 +1,51 @@
+{
+  "app": {
+    "name": "TFITPICAN",
+    "version": "0.1.0",
+    "author": "Thomas Fischer",
+    "license": "MIT"
+  },
+  "can": {
+    "interface": "virtual",
+    "channel": "vcan0",
+    "bitrate": 500000,
+    "enable_auto_restart": true
+  },
+  "database": {
+    "type": "sqlite",
+    "path": "db/tfitpican.db",
+    "backup_enabled": true,
+    "backup_interval_hours": 24
+  },
+  "influxdb": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 8086,
+    "database": "canbus_data",
+    "username": "",
+    "password": "",
+    "retention_policy": "2w"
+  },
+  "grafana": {
+    "url": "http://localhost:3000",
+    "dashboard_uid": "canbus-dashboard"
+  },
+  "ui": {
+    "fullscreen": false,
+    "theme": "dark",
+    "refresh_rate_ms": 500,
+    "show_raw_data": true
+  },
+  "bluetooth": {
+    "enabled": true,
+    "device_name": "TFITPICAN",
+    "pin": "1234"
+  },
+  "logging": {
+    "level": "INFO",
+    "file_enabled": true,
+    "log_dir": "logs",
+    "max_size_mb": 10,
+    "backup_count": 5
+  }
+}
