@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -----------------------------------------------------------------------------
 # Author: Thomas Fischer
-# Version: 0.1.1
+# Version: 0.1.2
 # License: MIT
 # Filename: tfitpican_main.py
 # Pathname: /path/to/tfitpican/
@@ -108,7 +108,7 @@ class TFITPICANApp:
         config = {
             "app": {
                 "name": "TFITPICAN",
-                "version": "0.1.1",
+                "version": "0.1.2",
                 "author": "Thomas Fischer",
                 "license": "MIT"
             },
@@ -186,10 +186,10 @@ class TFITPICANApp:
                 self.error_manager
             )
             
-            # Grafana adapter for visualization (using SQLite)
+            # Grafana adapter for visualization
+            # Corrected: Remove the sqlite_db argument
             self.grafana_adapter = GrafanaAdapter(
                 self.config_path, 
-                self.sqlite_db,  # Pass SQLite instance
                 self.error_manager
             )
             
@@ -301,9 +301,6 @@ class TFITPICANApp:
             # Connect to CAN bus
             self.can_manager.connect()
             
-            # Configure Grafana for SQLite if needed
-            self.grafana_adapter.configure_grafana_sqlite_datasource()
-            
             # Start GUI if available and not in headless mode
             gui_started = self._setup_gui()
             
@@ -384,7 +381,7 @@ def parse_arguments():
     parser.add_argument(
         "--version", 
         action="version",
-        version="TFITPICAN 0.1.1"
+        version="TFITPICAN 0.1.2"
     )
     
     return parser.parse_args()
