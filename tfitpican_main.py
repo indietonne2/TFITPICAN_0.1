@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -----------------------------------------------------------------------------
 # Author: Thomas Fischer
-# Version: 0.1.2
+# Version: 0.1.3
 # License: MIT
 # Filename: tfitpican_main.py
 # Pathname: /path/to/tfitpican/
@@ -108,7 +108,7 @@ class TFITPICANApp:
         config = {
             "app": {
                 "name": "TFITPICAN",
-                "version": "0.1.2",
+                "version": "0.1.3",
                 "author": "Thomas Fischer",
                 "license": "MIT"
             },
@@ -381,7 +381,7 @@ def parse_arguments():
     parser.add_argument(
         "--version", 
         action="version",
-        version="TFITPICAN 0.1.2"
+        version="TFITPICAN 0.1.3"
     )
     
     return parser.parse_args()
